@@ -1,0 +1,396 @@
+{% extends "layout.html" %}
+
+{% block title %}
+CyberGuard | Protect Your Digital World
+{% endblock %}
+
+
+{% block content %}
+
+<div class="cyber-home">
+
+    <!-- ============================================= -->
+    <!-- HERO -->
+    <!-- ============================================= -->
+
+    <section class="hero-section">
+
+        <div class="hero-content">
+
+            <div class="hero-badge">
+                🛡️ CYBERGUARD SECURITY PLATFORM
+            </div>
+
+            <h1>
+                Protect Your
+                <span>Digital World.</span>
+            </h1>
+
+            <p class="hero-description">
+                Learn cybersecurity, analyze suspicious URLs,
+                test password strength and improve your digital
+                security — all in one place.
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a
+                    href="{{ url_for('register') }}"
+                    class="hero-btn primary-btn"
+                >
+                    🚀 Get Started
+                </a>
+
+                <a
+                    href="#features"
+                    class="hero-btn secondary-btn"
+                >
+                    Explore Features ↓
+                </a>
+
+            </div>
+
+
+            <div class="hero-trust">
+
+                <span>✓ Free to use</span>
+                <span>✓ Security focused</span>
+                <span>✓ Learn & protect</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- CYBER SHIELD -->
+        <!-- ========================================= -->
+
+        <div class="hero-visual">
+
+            <div class="cyber-orbit orbit-one"></div>
+
+            <div class="cyber-orbit orbit-two"></div>
+
+            <div class="cyber-orbit orbit-three"></div>
+
+            <div class="shield-container">
+
+                <div class="shield-glow"></div>
+
+                <div class="shield">
+                    🛡️
+                </div>
+
+            </div>
+
+            <div class="floating-card card-one">
+                🔐 Strong Password
+            </div>
+
+            <div class="floating-card card-two">
+                🔎 URL Protected
+            </div>
+
+            <div class="floating-card card-three">
+                ✓ Secure
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ============================================= -->
+    <!-- FEATURES -->
+    <!-- ============================================= -->
+
+    <section
+        class="features-section"
+        id="features"
+    >
+
+        <div class="home-section-heading">
+
+            <div class="home-section-badge">
+                SECURITY TOOLKIT
+            </div>
+
+            <h2>
+                Everything You Need
+                <span>To Stay Secure</span>
+            </h2>
+
+            <p>
+                CyberGuard gives you practical tools and
+                knowledge to protect yourself online.
+            </p>
+
+        </div>
+
+
+        <div class="home-features-grid">
+
+
+            <!-- URL CHECKER -->
+
+            <div class="home-feature-card">
+
+                <div class="feature-icon">
+                    🔎
+                </div>
+
+                <h3>
+                    URL Security Checker
+                </h3>
+
+                <p>
+                    Analyze suspicious URLs and identify
+                    potential security risks.
+                </p>
+
+                <a href="{{ url_for('url_checker') }}">
+                    Analyze URL →
+                </a>
+
+            </div>
+
+
+            <!-- PASSWORD -->
+
+            <div class="home-feature-card">
+
+                <div class="feature-icon">
+                    🔐
+                </div>
+
+                <h3>
+                    Password Checker
+                </h3>
+
+                <p>
+                    Check password strength and learn how
+                    to create stronger passwords.
+                </p>
+
+                <a href="{{ url_for('password_checker') }}">
+                    Check Password →
+                </a>
+
+            </div>
+
+
+            <!-- QUIZ -->
+
+            <div class="home-feature-card">
+
+                <div class="feature-icon">
+                    🧠
+                </div>
+
+                <h3>
+                    Cybersecurity Quiz
+                </h3>
+
+                <p>
+                    Test your cybersecurity knowledge with
+                    practical security questions.
+                </p>
+
+                <a href="{{ url_for('quiz') }}">
+                    Take Quiz →
+                </a>
+
+            </div>
+
+
+            <!-- LEARNING -->
+
+            <div class="home-feature-card">
+
+                <div class="feature-icon">
+                    📚
+                </div>
+
+                <h3>
+                    Learning Center
+                </h3>
+
+                <p>
+                    Learn about phishing, malware, social
+                    engineering and safe browsing.
+                </p>
+
+                <a href="{{ url_for('learning') }}">
+                    Start Learning →
+                </a>
+
+            </div>
+
+
+            <!-- SECURITY TIPS -->
+
+            <div class="home-feature-card">
+
+                <div class="feature-icon">
+                    🛡️
+                </div>
+
+                <h3>
+                    Security Tips
+                </h3>
+
+                <p>
+                    Discover simple habits that can make
+                    your digital life safer.
+                </p>
+
+                <a href="{{ url_for('security_tips') }}">
+                    View Tips →
+                </a>
+
+            </div>
+
+
+            <!-- SCAN HISTORY -->
+
+            <div class="home-feature-card">
+
+                <div class="feature-icon">
+                    📊
+                </div>
+
+                <h3>
+                    Security History
+                </h3>
+
+                <p>
+                    Keep track of your previous security
+                    scans and quiz performance.
+                </p>
+
+                <a href="{{ url_for('login') }}">
+                    View Dashboard →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ============================================= -->
+    <!-- WHY CYBERGUARD -->
+    <!-- ============================================= -->
+
+    <section class="why-section">
+
+        <div class="why-content">
+
+            <div class="home-section-badge">
+                WHY CYBERGUARD?
+            </div>
+
+            <h2>
+                Security Doesn't Have
+                To Be <span>Complicated.</span>
+            </h2>
+
+            <p>
+                Cyber threats are becoming more common,
+                but protecting yourself doesn't have to
+                be difficult.
+            </p>
+
+            <div class="why-list">
+
+                <div>
+                    <span>01</span>
+                    <p>
+                        Understand common cyber threats.
+                    </p>
+                </div>
+
+                <div>
+                    <span>02</span>
+                    <p>
+                        Analyze suspicious links before
+                        clicking them.
+                    </p>
+                </div>
+
+                <div>
+                    <span>03</span>
+                    <p>
+                        Build stronger security habits.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="security-message">
+
+            <div class="message-shield">
+                🛡️
+            </div>
+
+            <h3>
+                Stay Alert.
+            </h3>
+
+            <h3>
+                Stay Protected.
+            </h3>
+
+            <p>
+                Your security starts with awareness.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ============================================= -->
+    <!-- FINAL CTA -->
+    <!-- ============================================= -->
+
+    <section class="home-cta">
+
+        <div class="cta-glow"></div>
+
+        <div class="cta-content">
+
+            <div class="home-section-badge">
+                START YOUR SECURITY JOURNEY
+            </div>
+
+            <h2>
+                Ready to Become
+                <span>Cyber Smart?</span>
+            </h2>
+
+            <p>
+                Create your free CyberGuard account and
+                start improving your cybersecurity today.
+            </p>
+
+            <a
+                href="{{ url_for('register') }}"
+                class="hero-btn primary-btn"
+            >
+                🚀 Create Free Account
+            </a>
+
+        </div>
+
+    </section>
+
+</div>
+
+{% endblock %}

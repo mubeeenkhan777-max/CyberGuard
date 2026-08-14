@@ -1,0 +1,216 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Two-Factor Authentication - CyberGuard
+{% endblock %}
+
+{% block content %}
+
+<section class="lesson-page">
+
+    <div class="lesson-header">
+
+        <p class="eyebrow">CYBERSECURITY LESSON</p>
+
+        <h1>Two-Factor Authentication 🔐</h1>
+
+        <p>
+            Learn how 2FA adds an extra layer of protection
+            to your online accounts.
+        </p>
+
+    </div>
+
+
+    <div class="lesson-content">
+
+
+        <!-- What is 2FA -->
+
+        <article class="lesson-card">
+
+            <h2>🔐 What is Two-Factor Authentication?</h2>
+
+            <p>
+                Two-factor authentication, commonly called 2FA,
+                is a security method that requires two different
+                types of verification before allowing access to
+                an account.
+            </p>
+
+            <p>
+                Even if someone discovers your password,
+                a second verification factor can help prevent
+                unauthorized access.
+            </p>
+
+        </article>
+
+
+        <!-- Three Factors -->
+
+        <article class="lesson-card">
+
+            <h2>🧩 The Three Authentication Factors</h2>
+
+            <p>
+                Authentication factors generally fall into
+                three categories:
+            </p>
+
+            <ul>
+
+                <li>
+                    <strong>Something you know:</strong>
+                    A password or PIN.
+                </li>
+
+                <li>
+                    <strong>Something you have:</strong>
+                    A security key, phone, or authentication device.
+                </li>
+
+                <li>
+                    <strong>Something you are:</strong>
+                    A biometric characteristic such as a fingerprint
+                    or face recognition.
+                </li>
+
+            </ul>
+
+        </article>
+
+
+        <!-- Examples -->
+
+        <article class="lesson-card">
+
+            <h2>📱 Examples of 2FA</h2>
+
+            <ul>
+
+                <li>
+                    Authentication apps that generate temporary codes.
+                </li>
+
+                <li>
+                    Security keys.
+                </li>
+
+                <li>
+                    One-time verification codes.
+                </li>
+
+                <li>
+                    Biometric verification combined with another factor.
+                </li>
+
+            </ul>
+
+        </article>
+
+
+        <!-- Why Important -->
+
+        <article class="lesson-card">
+
+            <h2>🛡️ Why is 2FA Important?</h2>
+
+            <p>
+                Passwords can sometimes be stolen through phishing,
+                data breaches, malware, or password reuse.
+            </p>
+
+            <p>
+                2FA provides an additional security layer,
+                making it harder for an attacker to access an
+                account using only a stolen password.
+            </p>
+
+        </article>
+
+
+        <!-- Best Practices -->
+
+        <article class="lesson-card">
+
+            <h2>⭐ 2FA Best Practices</h2>
+
+            <ol>
+
+                <li>
+                    Enable 2FA on important accounts whenever available.
+                </li>
+
+                <li>
+                    Prefer strong authentication methods such as
+                    security keys or authenticator applications
+                    when appropriate.
+                </li>
+
+                <li>
+                    Never share verification codes with other people.
+                </li>
+
+                <li>
+                    Keep recovery methods secure.
+                </li>
+
+                <li>
+                    Don't approve unexpected authentication requests.
+                </li>
+
+            </ol>
+
+        </article>
+
+
+        <!-- Important Warning -->
+
+        <article class="lesson-card">
+
+            <h2>🚨 Important Warning</h2>
+
+            <p>
+                A legitimate organization should not ask you to
+                give them your one-time authentication code.
+            </p>
+
+            <p>
+                If someone calls or messages you asking for a
+                verification code, stop and independently verify
+                who they are.
+            </p>
+
+        </article>
+
+
+        <!-- Summary -->
+
+        <article class="lesson-card">
+
+            <h2>💡 Remember</h2>
+
+            <p>
+                Your password is only one layer of security.
+                Adding another authentication factor can
+                significantly improve account protection.
+            </p>
+
+        </article>
+
+
+    </div>
+
+
+    <div class="lesson-navigation">
+
+        <a href="{{ url_for('learning') }}">
+            ← Back to Learning Center
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

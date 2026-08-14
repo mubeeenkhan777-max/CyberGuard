@@ -1,0 +1,173 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Quiz Score History | CyberGuard
+{% endblock %}
+
+{% block content %}
+
+<div class="cyber-dashboard">
+
+```
+<!-- HEADER -->
+
+<section class="dashboard-hero">
+
+    <div>
+
+        <p class="dashboard-eyebrow">
+            CYBERGUARD SECURITY CENTER
+        </p>
+
+        <h1>
+            Quiz <span>Score History</span>
+        </h1>
+
+        <p class="dashboard-subtitle">
+            Review your previous cybersecurity quiz attempts
+            and track your learning progress.
+        </p>
+
+    </div>
+
+    <div class="dashboard-shield">
+        🏆
+    </div>
+
+</section>
+
+
+<!-- SCORE HISTORY -->
+
+<section class="dashboard-section">
+
+    <div class="section-heading">
+
+        <div>
+
+            <p class="dashboard-eyebrow">
+                YOUR PERFORMANCE
+            </p>
+
+            <h2>
+                Previous Quiz Attempts
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    {% if scores %}
+
+    <div class="score-history-list">
+
+        {% for score in scores %}
+
+        {% set percentage = (score.score / score.total * 100) | round | int %}
+
+        <div class="score-history-card">
+
+            <div class="score-history-icon">
+                {% if percentage >= 80 %}
+                    🏆
+                {% elif percentage >= 50 %}
+                    📊
+                {% else %}
+                    📚
+                {% endif %}
+            </div>
+
+
+            <div class="score-history-info">
+
+                <h3>
+                    Quiz Attempt #{{ loop.index }}
+                </h3>
+
+                <p>
+                    Score: {{ score.score }} / {{ score.total }}
+                </p>
+
+            </div>
+
+
+            <div class="score-history-result">
+
+                <strong>
+                    {{ percentage }}%
+                </strong>
+
+                <span>
+                    {% if percentage >= 80 %}
+                        Excellent
+                    {% elif percentage >= 50 %}
+                        Good Progress
+                    {% else %}
+                        Keep Learning
+                    {% endif %}
+                </span>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    {% else %}
+
+    <div class="dashboard-final">
+
+        <div class="dashboard-final-icon">
+            📝
+        </div>
+
+        <div>
+
+            <h2>
+                No Quiz Attempts Yet
+            </h2>
+
+            <p>
+                Take your first cybersecurity quiz to start
+                building your score history.
+            </p>
+
+            <br>
+
+            <a
+                href="{{ url_for('quiz') }}"
+                class="hero-btn primary-btn"
+            >
+                🧠 Take Quiz
+            </a>
+
+        </div>
+
+    </div>
+
+    {% endif %}
+
+
+    <!-- NAVIGATION -->
+
+    <div class="lesson-navigation">
+
+        <a href="{{ url_for('dashboard') }}">
+            ← Back to Dashboard
+        </a>
+
+        <a href="{{ url_for('quiz') }}">
+            Take Quiz →
+        </a>
+
+    </div>
+
+</section>
+```
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Page Not Found - CyberGuard
+{% endblock %}
+
+{% block content %}
+
+<section class="lesson-page">
+
+    <div class="lesson-header">
+
+        <p class="eyebrow">
+            CYBERGUARD
+        </p>
+
+        <h1>
+            404 — Page Not Found
+        </h1>
+
+        <p>
+            The page you're looking for doesn't exist.
+        </p>
+
+    </div>
+
+    <div class="lesson-card">
+
+        <h2>
+            🛡️ Don't worry.
+        </h2>
+
+        <p>
+            The CyberGuard security system is still operational.
+        </p>
+
+        <a href="{{ url_for('dashboard') }}">
+            Return to Dashboard
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

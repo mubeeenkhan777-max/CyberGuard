@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Scan History - CyberGuard
+{% endblock %}
+
+{% block content %}
+
+<section class="url-checker-page">
+
+    <div class="lesson-header">
+
+        <p class="eyebrow">
+            CYBERGUARD
+        </p>
+
+        <h1>
+            URL Scan History
+        </h1>
+
+        <p>
+            Review the URLs you previously analyzed.
+        </p>
+
+    </div>
+
+
+    {% if scans %}
+
+        <div class="url-result">
+
+            {% for scan in scans %}
+
+                <div class="history-item">
+
+                    <h3>
+                        {{ scan.url }}
+                    </h3>
+
+                    <p>
+                        Score:
+                        <strong>
+                            {{ scan.risk_score }}/100
+                        </strong>
+                    </p>
+
+                    <p>
+                        Risk:
+                        {{ scan.risk_level|capitalize }}
+                    </p>
+
+                    <p>
+                        Scanned:
+                        {{ scan.created_at }}
+                    </p>
+
+                </div>
+
+                <hr>
+
+            {% endfor %}
+
+        </div>
+
+    {% else %}
+
+        <div class="url-result">
+
+            <h3>
+                No scans yet.
+            </h3>
+
+            <p>
+                Your URL security checks will appear here.
+            </p>
+
+        </div>
+
+    {% endif %}
+
+
+    <div class="lesson-navigation">
+
+        <a href="{{ url_for('dashboard') }}">
+            ← Back to Dashboard
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

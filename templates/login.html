@@ -1,0 +1,243 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Login | CyberGuard
+{% endblock %}
+
+{% block content %}
+
+<div class="register-page">
+
+    <div class="register-background"></div>
+
+    <div class="register-wrapper">
+
+        <!-- LEFT SIDE -->
+
+        <div class="register-info">
+
+            <div class="brand-mark">
+                🛡️
+            </div>
+
+            <p class="register-eyebrow">
+                CYBERGUARD SECURITY
+            </p>
+
+            <h1>
+                Welcome
+                <span>back.</span>
+            </h1>
+
+            <p class="register-description">
+                Sign in to continue protecting your digital
+                world with CyberGuard.
+            </p>
+
+            <div class="security-points">
+
+                <div class="security-point">
+
+                    <span>✓</span>
+
+                    <div>
+
+                        <strong>
+                            Secure Access
+                        </strong>
+
+                        <small>
+                            Your account is protected with
+                            password hashing.
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="security-point">
+
+                    <span>✓</span>
+
+                    <div>
+
+                        <strong>
+                            Security Tools
+                        </strong>
+
+                        <small>
+                            Analyze passwords and suspicious URLs.
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="security-point">
+
+                    <span>✓</span>
+
+                    <div>
+
+                        <strong>
+                            Track Your Progress
+                        </strong>
+
+                        <small>
+                            Continue your cybersecurity journey.
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- LOGIN CARD -->
+
+        <div class="register-card">
+
+            <div class="register-card-header">
+
+                <div class="mini-shield">
+                    🔐
+                </div>
+
+                <div>
+
+                    <p class="card-label">
+                        SECURE LOGIN
+                    </p>
+
+                    <h2>
+                        Welcome Back
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <form
+                action="{{ url_for('login') }}"
+                method="post"
+                class="register-form"
+            >
+
+                <!-- USERNAME -->
+
+                <div class="register-field">
+
+                    <label for="username">
+                        Username
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            👤
+                        </span>
+
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            placeholder="Enter your username"
+                            autocomplete="username"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="register-field">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            🔒
+                        </span>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- LOGIN BUTTON -->
+
+                <button
+                    type="submit"
+                    class="register-button"
+                >
+
+                    <span>
+                        Sign In Securely
+                    </span>
+
+                    <span class="button-arrow">
+                        →
+                    </span>
+
+                </button>
+
+            </form>
+
+
+            <!-- REGISTER -->
+
+            <div class="register-login">
+
+                <span>
+                    Don't have an account?
+                </span>
+
+                <a href="{{ url_for('register') }}">
+                    Create Account
+                </a>
+
+            </div>
+
+
+            <!-- SECURITY NOTE -->
+
+            <div class="security-note">
+
+                <span>
+                    🔒
+                </span>
+
+                <span>
+                    CyberGuard uses secure password hashing.
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

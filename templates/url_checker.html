@@ -1,0 +1,325 @@
+{% extends "layout.html" %}
+
+{% block title %}
+URL Security Checker - CyberGuard
+{% endblock %}
+
+
+{% block content %}
+
+<section class="url-checker-page">
+
+    <!-- ============================================= -->
+    <!-- HEADER -->
+    <!-- ============================================= -->
+
+    <div class="lesson-header">
+
+        <p class="eyebrow">
+            CYBERGUARD SECURITY TOOL
+        </p>
+
+        <h1>
+            Suspicious URL Checker 🔎
+        </h1>
+
+        <p>
+            Analyze a URL for common warning signs before
+            interacting with it.
+        </p>
+
+    </div>
+
+
+    <!-- ============================================= -->
+    <!-- URL INPUT -->
+    <!-- ============================================= -->
+
+    <div class="url-checker-card">
+
+        <form method="POST">
+
+            <label for="url">
+                Enter a URL
+            </label>
+
+            <input
+                type="text"
+                id="url"
+                name="url"
+                placeholder="https://example.com"
+                value="{{ url }}"
+                required
+            >
+
+            <button type="submit">
+                Analyze URL
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <!-- ============================================= -->
+    <!-- RESULT -->
+    <!-- ============================================= -->
+
+    {% if result %}
+
+    <div class="url-result">
+
+        <h2>
+            🔎 Analysis Result
+        </h2>
+
+
+        <!-- ========================================= -->
+        <!-- RISK LEVEL -->
+        <!-- ========================================= -->
+
+        <div class="result-summary">
+
+            {% if risk_level == "low" %}
+
+                <h3>
+                    🟢 Low Risk
+                </h3>
+
+            {% elif risk_level == "medium" %}
+
+                <h3>
+                    🟠 Medium Risk
+                </h3>
+
+            {% else %}
+
+                <h3>
+                    🔴 High Risk
+                </h3>
+
+            {% endif %}
+
+
+            <!-- SECURITY SCORE -->
+
+            <h2>
+                Security Score: {{ risk_score }}/100
+            </h2>
+
+
+            <!-- SCORE BAR -->
+
+            <div class="score-bar">
+
+                <div
+                    class="score-bar-fill"
+                    data-score="{{ risk_score }}"
+                ></div>
+
+            </div>
+
+
+            <!-- SCORE DESCRIPTION -->
+
+            <p class="score-description">
+
+                {% if risk_level == "low" %}
+
+                    The URL has relatively few warning signs
+                    based on CyberGuard's basic checks.
+
+                {% elif risk_level == "medium" %}
+
+                    The URL contains some warning signs.
+                    Be cautious before interacting with it.
+
+                {% else %}
+
+                    The URL contains several warning signs.
+                    Avoid interacting with it unless you can
+                    verify its legitimacy.
+
+                {% endif %}
+
+            </p>
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- URL DETAILS -->
+        <!-- ========================================= -->
+
+        <div class="url-details">
+
+            <p>
+                <strong>URL:</strong>
+                {{ url }}
+            </p>
+
+            <p>
+                <strong>HTTPS:</strong>
+                {{ checks.https }}
+            </p>
+
+            <p>
+                <strong>IP Address:</strong>
+                {{ checks.ip_address }}
+            </p>
+
+            <p>
+                <strong>Domain:</strong>
+                {{ checks.domain }}
+            </p>
+
+            <p>
+                <strong>Subdomains:</strong>
+                {{ checks.subdomains }}
+            </p>
+
+            <p>
+                <strong>URL Length:</strong>
+                {{ checks.length }}
+            </p>
+
+            <p>
+                <strong>Suspicious Characters:</strong>
+                {{ checks.suspicious_characters }}
+            </p>
+
+            <p>
+                <strong>URL Encoding:</strong>
+                {{ checks.encoding }}
+            </p>
+
+            <p>
+                <strong>Suspicious Keywords:</strong>
+                {{ checks.keywords }}
+            </p>
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- RISK BREAKDOWN -->
+        <!-- ========================================= -->
+
+        <div class="risk-breakdown">
+
+            <h3>
+                🧠 Why this score?
+            </h3>
+
+            {% if risk_breakdown %}
+
+                <ul>
+
+                    {% for item in risk_breakdown %}
+
+                        <li>
+                            {{ item }}
+                        </li>
+
+                    {% endfor %}
+
+                </ul>
+
+            {% else %}
+
+                <p>
+                    No risk points were deducted.
+                </p>
+
+            {% endif %}
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- WARNINGS -->
+        <!-- ========================================= -->
+
+        {% if warnings %}
+
+        <div class="url-warnings">
+
+            <h3>
+                ⚠️ Warning Signs
+            </h3>
+
+            <ul>
+
+                {% for warning in warnings %}
+
+                    <li>
+                        {{ warning }}
+                    </li>
+
+                {% endfor %}
+
+            </ul>
+
+        </div>
+
+        {% else %}
+
+        <div class="url-safe">
+
+            <h3>
+                ✅ No Obvious Warning Signs
+            </h3>
+
+            <p>
+                CyberGuard did not detect the basic warning
+                signs checked by this tool.
+            </p>
+
+        </div>
+
+        {% endif %}
+
+
+        <!-- ========================================= -->
+        <!-- DISCLAIMER -->
+        <!-- ========================================= -->
+
+        <p class="disclaimer">
+
+            This tool provides a basic educational analysis.
+            It cannot guarantee that a URL is safe or malicious.
+
+        </p>
+
+    </div>
+
+    {% endif %}
+
+
+    <!-- ============================================= -->
+    <!-- BACK TO DASHBOARD -->
+    <!-- ============================================= -->
+
+    <div class="lesson-navigation">
+
+        <a href="{{ url_for('dashboard') }}">
+            ← Back to Dashboard
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}
+
+
+<!-- ============================================= -->
+<!-- JAVASCRIPT -->
+<!-- ============================================= -->
+
+{% block scripts %}
+
+<script src="{{ url_for('static', filename='js/score.js') }}"></script>
+
+{% endblock %}
+

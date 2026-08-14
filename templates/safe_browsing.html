@@ -1,0 +1,259 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Safe Browsing - CyberGuard
+{% endblock %}
+
+{% block content %}
+
+<section class="lesson-page">
+
+    <div class="lesson-header">
+
+        <p class="eyebrow">CYBERSECURITY LESSON</p>
+
+        <h1>Safe Browsing 🌐</h1>
+
+        <p>
+            Learn how to identify suspicious websites,
+            links, and online activities.
+        </p>
+
+    </div>
+
+
+    <div class="lesson-content">
+
+
+        <!-- What is Safe Browsing -->
+
+        <article class="lesson-card">
+
+            <h2>🌐 What is Safe Browsing?</h2>
+
+            <p>
+                Safe browsing means using the internet carefully
+                and making informed decisions before opening links,
+                downloading files, or entering sensitive information.
+            </p>
+
+            <p>
+                A website can look professional and still be
+                fraudulent, so it is important to examine the
+                website and the context of the request.
+            </p>
+
+        </article>
+
+
+        <!-- Check URL -->
+
+        <article class="lesson-card">
+
+            <h2>🔎 Check the Website Address</h2>
+
+            <p>
+                Before entering sensitive information, carefully
+                examine the website address.
+            </p>
+
+            <ul>
+
+                <li>
+                    Check the spelling of the domain name.
+                </li>
+
+                <li>
+                    Be careful with unexpected or unfamiliar domains.
+                </li>
+
+                <li>
+                    Don't assume that a padlock icon alone means
+                    a website is trustworthy.
+                </li>
+
+                <li>
+                    Be especially careful with links received
+                    unexpectedly through messages or email.
+                </li>
+
+            </ul>
+
+        </article>
+
+
+        <!-- Suspicious Signs -->
+
+        <article class="lesson-card">
+
+            <h2>🚨 Signs of a Suspicious Website</h2>
+
+            <ul>
+
+                <li>
+                    The domain name contains unusual spelling.
+                </li>
+
+                <li>
+                    The website creates extreme urgency or fear.
+                </li>
+
+                <li>
+                    It unexpectedly asks for passwords or
+                    authentication codes.
+                </li>
+
+                <li>
+                    It asks for unnecessary personal information.
+                </li>
+
+                <li>
+                    The website contains excessive pop-ups or
+                    unexpected downloads.
+                </li>
+
+                <li>
+                    The offer seems too good to be true.
+                </li>
+
+            </ul>
+
+        </article>
+
+
+        <!-- Links -->
+
+        <article class="lesson-card">
+
+            <h2>🔗 Be Careful With Links</h2>
+
+            <p>
+                Don't automatically trust a link just because
+                it appears to come from someone you know.
+            </p>
+
+            <p>
+                If you receive an unexpected message asking you
+                to sign in, consider navigating to the organization's
+                official website yourself instead of using the link.
+            </p>
+
+        </article>
+
+
+        <!-- Downloads -->
+
+        <article class="lesson-card">
+
+            <h2>📥 Safe Downloads</h2>
+
+            <ul>
+
+                <li>
+                    Download software from trusted sources.
+                </li>
+
+                <li>
+                    Avoid pirated or modified software.
+                </li>
+
+                <li>
+                    Be cautious with unexpected email attachments.
+                </li>
+
+                <li>
+                    Keep your operating system and applications updated.
+                </li>
+
+            </ul>
+
+        </article>
+
+
+        <!-- Public Wi-Fi -->
+
+        <article class="lesson-card">
+
+            <h2>📡 Public Wi-Fi</h2>
+
+            <p>
+                Public networks can create additional security risks.
+            </p>
+
+            <ul>
+
+                <li>
+                    Avoid performing highly sensitive activities
+                    on untrusted networks when possible.
+                </li>
+
+                <li>
+                    Use HTTPS websites.
+                </li>
+
+                <li>
+                    Keep your device and applications updated.
+                </li>
+
+                <li>
+                    Disable automatic connection to unknown networks.
+                </li>
+
+            </ul>
+
+        </article>
+
+
+        <!-- Golden Rules -->
+
+        <article class="lesson-card">
+
+            <h2>⭐ Safe Browsing Rules</h2>
+
+            <ol>
+
+                <li>
+                    Stop before clicking unexpected links.
+                </li>
+
+                <li>
+                    Check the domain carefully.
+                </li>
+
+                <li>
+                    Never share passwords or verification codes
+                    because someone asks for them.
+                </li>
+
+                <li>
+                    Download software only from trusted sources.
+                </li>
+
+                <li>
+                    Keep your software updated.
+                </li>
+
+                <li>
+                    When in doubt, verify through an independent
+                    trusted source.
+                </li>
+
+            </ol>
+
+        </article>
+
+
+    </div>
+
+
+    <div class="lesson-navigation">
+
+        <a href="{{ url_for('learning') }}">
+            ← Back to Learning Center
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

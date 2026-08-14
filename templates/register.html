@@ -1,0 +1,282 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Register | CyberGuard
+{% endblock %}
+
+{% block content %}
+
+<div class="register-page">
+
+    <div class="register-background"></div>
+
+    <div class="register-wrapper">
+
+        <!-- LEFT SIDE -->
+        <div class="register-info">
+
+            <div class="brand-mark">
+                🛡️
+            </div>
+
+            <p class="register-eyebrow">
+                CYBERGUARD SECURITY
+            </p>
+
+            <h1>
+                Protect your
+                <span>digital world.</span>
+            </h1>
+
+            <p class="register-description">
+                Create your CyberGuard account and start learning
+                how to protect your identity, accounts and digital
+                information.
+            </p>
+
+            <div class="security-points">
+
+                <div class="security-point">
+                    <span>✓</span>
+                    <div>
+                        <strong>Security Tools</strong>
+                        <small>Analyze suspicious URLs and passwords.</small>
+                    </div>
+                </div>
+
+                <div class="security-point">
+                    <span>✓</span>
+                    <div>
+                        <strong>Learn Cybersecurity</strong>
+                        <small>Build practical security knowledge.</small>
+                    </div>
+                </div>
+
+                <div class="security-point">
+                    <span>✓</span>
+                    <div>
+                        <strong>Track Your Progress</strong>
+                        <small>Monitor quizzes and security scans.</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+        <div class="register-card">
+
+            <div class="register-card-header">
+
+                <div class="mini-shield">
+                    🛡
+                </div>
+
+                <div>
+                    <p class="card-label">
+                        NEW ACCOUNT
+                    </p>
+
+                    <h2>
+                        Create Account
+                    </h2>
+                </div>
+
+            </div>
+
+
+            <form
+                action="{{ url_for('register') }}"
+                method="POST"
+                class="register-form"
+            >
+
+                <!-- USERNAME -->
+                <div class="register-field">
+
+                    <label for="username">
+                        Username
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            👤
+                        </span>
+
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            placeholder="Choose a username"
+                            autocomplete="username"
+                            maxlength="50"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- EMAIL -->
+                <div class="register-field">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            ✉
+                        </span>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="you@example.com"
+                            autocomplete="email"
+                            maxlength="120"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- PASSWORD -->
+                <div class="register-field">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            🔒
+                        </span>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Create a strong password"
+                            autocomplete="new-password"
+                            minlength="8"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONFIRM PASSWORD -->
+                <div class="register-field">
+
+                    <label for="confirmation">
+                        Confirm Password
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            🔐
+                        </span>
+
+                        <input
+                            type="password"
+                            id="confirmation"
+                            name="confirmation"
+                            placeholder="Repeat your password"
+                            autocomplete="new-password"
+                            minlength="8"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- PASSWORD REQUIREMENTS -->
+                <div class="register-requirements">
+
+                    <div class="requirements-title">
+                        <span>🔐</span>
+                        Password Security
+                    </div>
+
+                    <p>
+                        Use a password that contains:
+                    </p>
+
+                    <div class="requirement-grid">
+
+                        <span>✓ 8+ characters</span>
+                        <span>✓ Uppercase</span>
+                        <span>✓ Lowercase</span>
+                        <span>✓ Number</span>
+                        <span>✓ Special character</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BUTTON -->
+                <button
+                    type="submit"
+                    class="register-button"
+                >
+
+                    <span>
+                        Create Secure Account
+                    </span>
+
+                    <span class="button-arrow">
+                        →
+                    </span>
+
+                </button>
+
+            </form>
+
+
+            <!-- LOGIN -->
+            <div class="register-login">
+
+                <span>
+                    Already have an account?
+                </span>
+
+                <a href="{{ url_for('login') }}">
+                    Sign in
+                </a>
+
+            </div>
+
+
+            <div class="security-note">
+
+                <span>🔒</span>
+
+                <span>
+                    Your password is securely hashed before storage.
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

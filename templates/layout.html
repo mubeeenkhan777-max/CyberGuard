@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        {% block title %}CyberGuard{% endblock %}
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+    <nav>
+
+        <a
+            href="{{ url_for('index') }}"
+            class="logo"
+        >
+            🛡️ CyberGuard
+        </a>
+
+
+        <div class="nav-links">
+
+            <a href="{{ url_for('index') }}">
+                Home
+            </a>
+
+
+            {% if session.get("user_id") %}
+
+                <a href="{{ url_for('dashboard') }}">
+                    Dashboard
+                </a>
+
+                <a href="{{ url_for('url_checker') }}">
+                    URL Checker
+                </a>
+
+                <a href="{{ url_for('scan_history') }}">
+                    Scan History
+                </a>
+
+                <a href="{{ url_for('security_tips') }}">
+                    Security Tips
+                </a>
+
+                <a href="{{ url_for('logout') }}">
+                    Logout
+                </a>
+
+
+            {% else %}
+
+                <a href="{{ url_for('login') }}">
+                    Login
+                </a>
+
+                <a href="{{ url_for('register') }}">
+                    Register
+                </a>
+
+            {% endif %}
+
+        </div>
+
+    </nav>
+
+
+    <main>
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            &copy; 2026 CyberGuard.
+            Built for cybersecurity awareness.
+        </p>
+
+    </footer>
+
+
+    {% block scripts %}
+    {% endblock %}
+
+</body>
+
+

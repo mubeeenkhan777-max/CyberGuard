@@ -1,0 +1,138 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Cybersecurity Learning - CyberGuard
+{% endblock %}
+
+{% block content %}
+
+<section class="learning-page">
+
+    <div class="tool-header">
+
+        <p class="eyebrow">CYBERSECURITY EDUCATION</p>
+
+        <h1>Learn Cybersecurity</h1>
+
+        <p>
+            Learn the most important cybersecurity concepts
+            and protect yourself from common online threats.
+        </p>
+
+    </div>
+
+
+    <div class="learning-grid">
+
+        <div class="learning-card">
+
+            <div class="feature-icon">🎣</div>
+
+            <h2>Phishing</h2>
+
+            <p>
+                Learn how attackers use fake emails, messages,
+                and websites to steal information.
+            </p>
+
+            <a href="{{ url_for('phishing') }}">
+    Learn More →
+</a>
+
+        </div>
+
+
+        <div class="learning-card">
+
+            <div class="feature-icon">🦠</div>
+
+            <h2>Malware</h2>
+
+            <p>
+                Understand viruses, ransomware, spyware,
+                and other malicious software.
+            </p>
+
+           <a href="{{ url_for('malware') }}">
+    Learn More →
+</a>
+
+        </div>
+
+
+        <div class="learning-card">
+
+            <div class="feature-icon">🎭</div>
+
+            <h2>Social Engineering</h2>
+
+            <p>
+                Learn how attackers manipulate people into
+                revealing sensitive information.
+            </p>
+
+           <a href="{{ url_for('social_engineering') }}">
+    Learn More →
+</a>
+
+        </div>
+
+
+        <div class="learning-card">
+
+            <div class="feature-icon">🔑</div>
+
+            <h2>Password Security</h2>
+
+            <p>
+                Learn how to create strong passwords and
+                protect your online accounts.
+            </p>
+
+            <a href="/password-checker">
+                Try Password Checker →
+            </a>
+
+        </div>
+
+
+        <div class="learning-card">
+
+            <div class="feature-icon">📱</div>
+
+            <h2>Two-Factor Authentication</h2>
+
+            <p>
+                Learn how 2FA adds an additional layer
+                of protection to your accounts.
+            </p>
+
+            <a href="{{ url_for('two_factor') }}">
+    Learn More →
+</a>
+
+        </div>
+
+
+        <div class="learning-card">
+
+            <div class="feature-icon">🌐</div>
+
+            <h2>Safe Browsing</h2>
+
+            <p>
+                Learn how to recognize dangerous websites,
+                suspicious links, and online scams.
+            </p>
+
+            <a href="{{ url_for('safe_browsing') }}">
+    Learn More →
+</a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

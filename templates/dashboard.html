@@ -1,0 +1,547 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Dashboard | CyberGuard
+{% endblock %}
+
+
+{% block content %}
+
+<div class="cyber-dashboard">
+
+    <!-- ================================================= -->
+    <!-- HEADER -->
+    <!-- ================================================= -->
+
+    <section class="dashboard-hero">
+
+        <div>
+
+            <p class="dashboard-eyebrow">
+                CYBERGUARD SECURITY CENTER
+            </p>
+
+            <h1>
+                Welcome back,
+                <span>{{ username }}</span> 👋
+            </h1>
+
+            <p class="dashboard-subtitle">
+                Your personal cybersecurity command center.
+                Analyze, learn and improve your digital security.
+            </p>
+
+        </div>
+
+        <div class="dashboard-shield">
+            🛡️
+        </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- STATISTICS -->
+    <!-- ================================================= -->
+
+    <section class="dashboard-stats">
+
+        <!-- Quiz Attempts -->
+
+        <div class="security-stat">
+
+            <div class="stat-icon">
+                📝
+            </div>
+
+            <div>
+
+                <p>
+                    QUIZ ATTEMPTS
+                </p>
+
+                <h2>
+                    {{ quiz_count }}
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <!-- Best Score -->
+
+        <div class="security-stat">
+
+            <div class="stat-icon">
+                🏆
+            </div>
+
+            <div>
+
+                <p>
+                    BEST SCORE
+                </p>
+
+                <h2>
+                    {{ best_score }}%
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <!-- Average Score -->
+
+        <div class="security-stat">
+
+            <div class="stat-icon">
+                📊
+            </div>
+
+            <div>
+
+                <p>
+                    AVERAGE SCORE
+                </p>
+
+                <h2>
+                    {{ average_score }}%
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <!-- URL Scans -->
+
+        <div class="security-stat">
+
+            <div class="stat-icon">
+                🔎
+            </div>
+
+            <div>
+
+                <p>
+                    URL SCANS
+                </p>
+
+                <h2>
+                    {{ scan_count }}
+                </h2>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- QUICK ACTIONS -->
+    <!-- ================================================= -->
+
+    <section class="dashboard-section">
+
+        <div class="section-heading">
+
+            <div>
+
+                <p class="dashboard-eyebrow">
+                    SECURITY TOOLS
+                </p>
+
+                <h2>
+                    Quick Actions
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="security-tools-grid">
+
+
+            <!-- ================================================= -->
+            <!-- URL CHECKER -->
+            <!-- ================================================= -->
+
+            <a
+                href="{{ url_for('url_checker') }}"
+                class="security-tool-card"
+            >
+
+                <div class="tool-icon">
+                    🔎
+                </div>
+
+                <div>
+
+                    <h3>
+                        URL Security Checker
+                    </h3>
+
+                    <p>
+                        Analyze suspicious links and
+                        identify potential security risks.
+                    </p>
+
+                </div>
+
+                <span class="tool-arrow">
+                    →
+                </span>
+
+            </a>
+
+
+            <!-- ================================================= -->
+            <!-- PASSWORD CHECKER -->
+            <!-- ================================================= -->
+
+            <a
+                href="{{ url_for('password_checker') }}"
+                class="security-tool-card"
+            >
+
+                <div class="tool-icon">
+                    🔐
+                </div>
+
+                <div>
+
+                    <h3>
+                        Password Checker
+                    </h3>
+
+                    <p>
+                        Test password strength and learn
+                        how to create stronger passwords.
+                    </p>
+
+                </div>
+
+                <span class="tool-arrow">
+                    →
+                </span>
+
+            </a>
+
+
+            <!-- ================================================= -->
+            <!-- QUIZ -->
+            <!-- ================================================= -->
+
+            <a
+                href="{{ url_for('quiz') }}"
+                class="security-tool-card"
+            >
+
+                <div class="tool-icon">
+                    🧠
+                </div>
+
+                <div>
+
+                    <h3>
+                        Cybersecurity Quiz
+                    </h3>
+
+                    <p>
+                        Test your cybersecurity knowledge
+                        with practical questions.
+                    </p>
+
+                </div>
+
+                <span class="tool-arrow">
+                    →
+                </span>
+
+            </a>
+
+
+            <!-- ================================================= -->
+            <!-- LEARNING CENTER -->
+            <!-- ================================================= -->
+
+            <a
+                href="{{ url_for('learning') }}"
+                class="security-tool-card"
+            >
+
+                <div class="tool-icon">
+                    📚
+                </div>
+
+                <div>
+
+                    <h3>
+                        Learning Center
+                    </h3>
+
+                    <p>
+                        Learn about phishing, malware,
+                        social engineering and more.
+                    </p>
+
+                </div>
+
+                <span class="tool-arrow">
+                    →
+                </span>
+
+            </a>
+
+
+            <!-- ================================================= -->
+            <!-- SCAN HISTORY -->
+            <!-- ================================================= -->
+
+
+            <a
+                href="{{ url_for('scan_history') }}"
+                class="security-tool-card"
+            >
+
+                <div class="tool-icon">
+                    📋
+                </div>
+
+                <div>
+
+                    <h3>
+                        Scan History
+                    </h3>
+
+                    <p>
+                        Review your previous URL security
+                        analyses.
+                    </p>
+
+                </div>
+
+                <span class="tool-arrow">
+                    →
+                </span>
+
+            </a>
+
+
+            <!-- ================================================= -->
+            <!-- SECURITY TIPS -->
+            <!-- ================================================= -->
+
+            <a
+                href="{{ url_for('security_tips') }}"
+                class="security-tool-card"
+            >
+
+                <div class="tool-icon">
+                    🛡️
+                </div>
+
+                <div>
+
+                    <h3>
+                        Security Tips
+                    </h3>
+
+                    <p>
+                        Discover practical habits for
+                        protecting your digital life.
+                    </p>
+
+                </div>
+
+                <span class="tool-arrow">
+                    →
+                </span>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- LEARNING SECTION -->
+    <!-- ================================================= -->
+
+    <section class="dashboard-section">
+
+        <div class="section-heading">
+
+            <div>
+
+                <p class="dashboard-eyebrow">
+                    IMPROVE YOUR KNOWLEDGE
+                </p>
+
+                <h2>
+                    Cybersecurity Learning
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="learning-preview-grid">
+
+
+            <!-- Phishing -->
+
+            <a
+                href="{{ url_for('phishing') }}"
+                class="learning-card"
+            >
+
+                <div class="learning-icon">
+                    🎣
+                </div>
+
+                <h3>
+                    Phishing
+                </h3>
+
+                <p>
+                    Learn how attackers use fake messages
+                    and websites to steal information.
+                </p>
+
+            </a>
+
+
+            <!-- Malware -->
+
+            <a
+                href="{{ url_for('malware') }}"
+                class="learning-card"
+            >
+
+                <div class="learning-icon">
+                    🦠
+                </div>
+
+                <h3>
+                    Malware
+                </h3>
+
+                <p>
+                    Understand viruses, trojans and other
+                    malicious software.
+                </p>
+
+            </a>
+
+
+            <!-- Social Engineering -->
+
+            <a
+                href="{{ url_for('social_engineering') }}"
+                class="learning-card"
+            >
+
+                <div class="learning-icon">
+                    🎭
+                </div>
+
+                <h3>
+                    Social Engineering
+                </h3>
+
+                <p>
+                    Learn how attackers manipulate people
+                    into revealing sensitive information.
+                </p>
+
+            </a>
+
+
+            <!-- Two Factor Authentication -->
+
+            <a
+                href="{{ url_for('two_factor') }}"
+                class="learning-card"
+            >
+
+                <div class="learning-icon">
+                    🔑
+                </div>
+
+                <h3>
+                    Two-Factor Authentication
+                </h3>
+
+                <p>
+                    Learn how an additional security layer
+                    protects your accounts.
+                </p>
+
+            </a>
+
+
+            <!-- Safe Browsing -->
+
+            <a
+                href="{{ url_for('safe_browsing') }}"
+                class="learning-card"
+            >
+
+                <div class="learning-icon">
+                    🌐
+                </div>
+
+                <h3>
+                    Safe Browsing
+                </h3>
+
+                <p>
+                    Learn safer habits for browsing the
+                    internet.
+                </p>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- FOOTER MESSAGE -->
+    <!-- ================================================= -->
+
+    <section class="dashboard-final">
+
+        <div class="dashboard-final-icon">
+            🛡️
+        </div>
+
+        <div>
+
+            <h2>
+                Stay Cyber Safe
+            </h2>
+
+            <p>
+                Think before you click, use strong passwords,
+                enable two-factor authentication and keep
+                your software updated.
+            </p>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+{% endblock %}
+
