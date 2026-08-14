@@ -1873,3 +1873,12 @@ button:hover,
         min-height: 39px;
     }
 }
+/* Hide small eyebrow/badge headings across the website */
+
+.eyebrow,
+.dashboard-eyebrow,
+.register-eyebrow,
+.hero-badge,
+.home-section-badge {
+    display: none !important;
+}
