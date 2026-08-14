@@ -1644,3 +1644,232 @@ button:hover,
         padding: 28px 22px;
     }
 }
+/* =========================================================
+   REGISTER PAGE — FULL SCREEN / NO SCROLL DESKTOP
+   ========================================================= */
+
+@media (min-width: 951px) {
+
+    .register-page {
+        height: calc(100vh - 70px);
+        min-height: 0;
+        padding: 15px 25px;
+        overflow: hidden;
+    }
+
+    .register-wrapper {
+        width: 100%;
+        max-width: 1100px;
+        height: 100%;
+        max-height: 690px;
+
+        grid-template-columns: 1fr 450px;
+        gap: 35px;
+
+        align-items: center;
+    }
+
+    /* LEFT SIDE */
+
+    .register-info {
+        padding: 10px;
+    }
+
+    .brand-mark {
+        width: 55px;
+        height: 55px;
+        margin-bottom: 14px;
+        border-radius: 16px;
+        font-size: 27px;
+    }
+
+    .register-info h1 {
+        margin: 0 0 12px;
+        font-size: clamp(38px, 4.5vw, 58px);
+        line-height: .98;
+    }
+
+    .register-description {
+        max-width: 500px;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    .security-points {
+        gap: 9px;
+        margin-top: 18px;
+    }
+
+    .security-point {
+        gap: 10px;
+        font-size: 14px;
+        line-height: 1.3;
+    }
+
+    .security-point > span {
+        width: 24px;
+        height: 24px;
+        font-size: 12px;
+    }
+
+
+    /* RIGHT REGISTER CARD */
+
+    .register-card {
+        width: 100%;
+        padding: 20px 24px;
+
+        border-radius: 20px;
+    }
+
+    .register-card-header {
+        gap: 10px;
+        margin-bottom: 14px;
+    }
+
+    .mini-shield {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        font-size: 18px;
+    }
+
+    .card-label {
+        font-size: 9px;
+        letter-spacing: 1.7px;
+    }
+
+    .register-card h2 {
+        font-size: 21px;
+        line-height: 1.1;
+    }
+
+    .register-form {
+        gap: 9px;
+    }
+
+    .register-field label {
+        margin-bottom: 4px;
+        font-size: 12px;
+    }
+
+    .input-wrapper input {
+        height: 43px;
+        padding: 10px 12px 10px 40px;
+        border-radius: 9px;
+        font-size: 13px;
+    }
+
+    .input-icon {
+        left: 13px;
+        font-size: 13px;
+    }
+
+
+    /* PASSWORD REQUIREMENTS */
+
+    .register-requirements {
+        padding: 10px 12px;
+        border-radius: 10px;
+    }
+
+    .requirements-title {
+        font-size: 13px;
+    }
+
+    .register-requirements p {
+        margin: 4px 0 7px;
+        font-size: 10px;
+    }
+
+    .requirement-grid {
+        gap: 5px;
+    }
+
+    .requirement-grid span {
+        padding: 4px 7px;
+        border-radius: 6px;
+        font-size: 9px;
+    }
+
+
+    /* REGISTER BUTTON */
+
+    .register-button {
+        min-height: 43px;
+        padding: 10px 13px;
+        border-radius: 9px;
+        font-size: 13px;
+    }
+
+    .register-login {
+        margin-top: 10px;
+        font-size: 11px;
+    }
+
+    .security-note {
+        margin-top: 9px;
+        padding-top: 8px;
+        font-size: 9px;
+    }
+}
+
+
+/* =========================================================
+   EXTRA COMPACT MODE FOR SHORT LAPTOP SCREENS
+   ========================================================= */
+
+@media (min-width: 951px) and (max-height: 800px) {
+
+    nav {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    .register-page {
+        height: calc(100vh - 58px);
+        padding: 8px 20px;
+    }
+
+    .register-wrapper {
+        max-height: 700px;
+        gap: 25px;
+    }
+
+    .register-info h1 {
+        font-size: 48px;
+    }
+
+    .register-description {
+        font-size: 13px;
+    }
+
+    .security-points {
+        margin-top: 13px;
+        gap: 7px;
+    }
+
+    .security-point {
+        font-size: 12px;
+    }
+
+    .register-card {
+        padding: 17px 22px;
+    }
+
+    .register-form {
+        gap: 7px;
+    }
+
+    .input-wrapper input {
+        height: 39px;
+    }
+
+    .register-requirements {
+        padding: 8px 10px;
+    }
+
+    .register-button {
+        min-height: 39px;
+    }
+}
